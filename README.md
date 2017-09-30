@@ -1,6 +1,29 @@
 # travis
 experiments with travis
 
+### How to trigger another build from Travis?
+
+Now let's add trigger a Travis build from a travis build.
+
+```shell
+body='{
+"request": {
+"branch":"'$TARGET_BRANCH'"
+}}'
+
+# requires before "gem install travis"
+travis login --github-token $GITHUB_AUTH_TOKEN
+TRAVIS_TOKEN=$(travis token --no-interactive)
+
+curl -s -X POST \
+   -H "Content-Type: application/json" \
+   -H "Accept: application/json" \
+   -H "Travis-API-Version: 3" \
+   -H "Authorization: token "$TRAVIS_TOKEN \
+   -d "$body" \
+   https://api.travis-ci.org/repo/$TARGET_REPO/requests
+```
+
 ### How to delete a Github branch from Travis?
 
 It is quite easy to delete a branch from travis
@@ -13,7 +36,7 @@ Interestingly, it is possible to delete the branch that is being built, by using
 
 [proof](https://travis-ci.org/monperrus/travis/builds/281748344)
 
-This is fun, but not super interesting if ones wants to be able to reproduce a build
+Note that is impossible to delete branch "master" (which is protected by default, unless changed).
 
 ### How to install Github's Hub on travis?
 
@@ -31,7 +54,7 @@ package github.com/github/hub: no buildable Go source files in /home/travis/gopa
 ### How to add an environment variable to travis?
 
 
-```
+```shell
 $ travis encrypt SOMETHING=foobar
 Detected repository as monperrus/travis, is this correct? |yes| 
 Please add the following to your .travis.yml file:
