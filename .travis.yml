@@ -11,7 +11,7 @@ script:
 - travis accounts
 - git remote
 - cat .git/config
-- curl -X DELETE -H 'Authorization: token '$GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
+- curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
 - curl https://api.github.com/repos/monperrus/travis/git/refs
 
 env:
