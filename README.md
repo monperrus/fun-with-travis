@@ -3,7 +3,8 @@ experiments with travis
 
 ### How to enrich the travis build with content from elsewhere?
 
-In `.travis.yml`
+It is possible to get the travis script from another source than the repo itself.
+For example, in `.travis.yml`
 ```yml
 install:
 - curl -o build.sh http://www.monperrus.net/martin/build.txt
@@ -12,6 +13,8 @@ install:
 script:
 - ./build.sh
 ```
+
+[proof](https://travis-ci.org/monperrus/travis/builds/281754151)
 
 ### How to trigger another build from Travis?
 
