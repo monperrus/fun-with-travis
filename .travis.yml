@@ -2,10 +2,13 @@
 install:
 - gem install travis
 - travis login --github-token $GITHUB_AUTH_TOKEN
+- go get github.com/github/hub
 
 script:
 - travis token --no-interactive
 - travis accounts
+- git remote
+- cat .git/config
 
 env:
   global:

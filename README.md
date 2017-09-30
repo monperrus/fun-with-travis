@@ -1,7 +1,13 @@
 # travis
 experiments with travis
 
-### Gow to add an environment variable to travis
+
+### How to install Github's Hub on travis?
+
+    go get github.com/github/hub
+    hub
+
+### How to add an environment variable to travis?
 
 
 ```
@@ -28,6 +34,9 @@ If a key is available, one can register a Travis session on travis.
 And create a travis token
 
     travis token --no-interactive
+
+[proof](https://travis-ci.org/monperrus/travis/builds/281672076)
+
 ### What is the default setup of travis?
 
 ```
