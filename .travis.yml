@@ -2,7 +2,7 @@
 install:
 - gem install travis
 - travis login --github-token $GITHUB_AUTH_TOKEN
-- rm /home/travis/gopath/src/github.com/github/hub
+#- rm /home/travis/gopath/src/github.com/github/hub
 - mkdir -p /home/travis/gopath 
 - go get github.com/github/hub
 - hub
