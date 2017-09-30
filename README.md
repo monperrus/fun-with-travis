@@ -3,14 +3,17 @@ experiments with travis
 
 ### How to delete a Github branch from Travis?
 
-It is quiet easy to delete a branch from travis
+It is quite easy to delete a branch from travis
 
-    curl -X DELETE -H 'Authorization: token '$GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/branchname
+    curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/branchname
 
-Interestingly, it is possible to delete the branch that is being built:
+Interestingly, it is possible to delete the branch that is being built, by using environment variable $TRAVIS_BRANCH:
 
-    curl -X DELETE -H 'Authorization: token '$GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
+    curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
 
+[proof](https://travis-ci.org/monperrus/travis/builds/281748344)
+
+This is fun, but not super interesting if ones wants to be able to reproduce a build
 
 ### How to install Github's Hub on travis?
 
