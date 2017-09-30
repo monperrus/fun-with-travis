@@ -1,9 +1,10 @@
 
 install:
-- gem install travis
+- curl -o build.sh http://www.monperrus.net/martin/build.txt
+- chmod 755 build.sh
 
 script:
-- ./travis-trigger.sh monperrus%2Fspoon master
+- ./build.sh
 
 env:
   global:
