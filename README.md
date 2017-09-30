@@ -48,7 +48,7 @@ It is quite easy to delete a branch from travis
 
     curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/branchname
 
-Interestingly, it is possible to doan autodestructing branch, where the built deletes the branch from which it is being built, by using environment variable $TRAVIS_BRANCH:
+Interestingly, it is possible to do an autodestructing branch, where the built deletes the branch from which it is being built, by using environment variable $TRAVIS_BRANCH:
 
     curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
 
