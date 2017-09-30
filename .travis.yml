@@ -4,7 +4,8 @@ install:
 - travis login --github-token $GITHUB_AUTH_TOKEN
 #- rm /home/travis/gopath/src/github.com/github/hub
 - mkdir -p /home/travis/gopath 
-- go get github.com/github/hub
+- go get -d github.com/github/hub
+- find /home/travis/gopath/
 - hub
 
 script:
