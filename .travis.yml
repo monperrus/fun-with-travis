@@ -1,2 +1,12 @@
+
+install:
+- gem install travis
+- travis login --github-token $GITHUB_AUTH_TOKEN
+
 script:
-  - gem install travis
+- travis token --no-interactive
+- travis accounts
+
+env:
+  global:
+    secure: xREmoFItxROEQG5JtBRnrxb20/C/kRJe+O7w0AIxEfivenBVv23nX9MbWgAnlyjkcfXr37viFw2wCWa9mGcENpcGviEkCmzERv8A9QTrMvQes6kmnavfhrDwhaHvP5uHNc/M5kUT+lY3CyXezHM+xjmuBwgBbiINTHKs5+GZIllfjjlhNOckAys5aSG65HLcUho1CjN+eR9IxuZcKxDXCJE6AtvHhmRW2D0mUsgdn/twoMaXB7xuTtIX9t5wFVnS+7DNz28oVCkMGdzt+ZaSf0jLNFs0niggkMrepMh4/QKo9dw+RjKzamx8T2j8rhYpjMxdLaMTwkxcXcV10jdW8SMGEcaKCWFHhVDa/Pd9zF9Q2Zr3trJ5cNzZ67jQCHGd62owsXbTqVLZOM5RqvrpHEhfBJo3tdariiFj1jqWcxMJ85JQ1SFoQwBi4NFTOWU/VWEPjMELMnqgDGcbmefjePBAGU/wtpYa8oDOaeDSc5LJlJ9izZe/ByREUyn80BfPq9tFD6YbISITr0LtaxSuvl9mCP7pFS0jsdQCr/PWBZLaDbkNqsLjKqItjcdOE/snMXcxxLGc9HvHO3nEyZX4/HIrR5ldyvgqfrDbLAkozbqnpv0GyexXnq5JQRmC+ZkZ68zNmqYaMlJyckmIS9ShOo3bmo0Nf78KfYcCjBiTRX4=

@@ -1,13 +1,38 @@
 # travis
 experiments with travis
 
+### Gow to add an environment variable to travis
+
+
+```
+$ travis encrypt SOMETHING=foobar
+Detected repository as monperrus/travis, is this correct? |yes| 
+Please add the following to your .travis.yml file:
+
+  secure: "fQPVVabiRPGFdUKkjyJjhudwmZaWv2gPgMtp6AbTTRzVTZLksbbDeaC++HiDrXTVgunQecdiC9YxrKjDUYnX/SuqX0VbKmkyOcjghD4Us4+vXdiS4tTqpVUuNLGFeyODA6PPn3nURWiShvTKTd7EJ446QekbmsP/5NMVQZ7DNnyqGe2UdtWRciVMuOaUelxpd2Lz7wQyPe7/LAZUr30aoenv+9Pt7GHh921MLfAg03j76tzpS2nhdgkstPCdj09seKOo/SSoqAxwD9l2lKWgPJaMwHHfNzyLseJejahVe0/1xZoiXD/k13oXUnv0Cn43OCytEq1zaUZe3w53Zm9BQ9Dai9QIW+HkYDtrIHBRnCMX2gaK7jabirIlve+BxufxZ9uUPMdgtwqY/u+Ye1mY37X979xfsCzYQ7+DOOOJotn69sDpeOFX6J7RdPARLhEdGpU6RNEYxzo21vyxTk4aqfreAlVhL8tdlfFphtDOoe8yw38neXr2BB//FmUFZtxC/G92uQzccTivMlfoK/CyCgr3ViTon8nBjegmQS1fvWWltJHtQHdokz7VddebfNrGc1Xzrqu8zRUp9hX18i+fI7es46nRlh4OqQHEDiItxz/+yM9EXyoKqJf4HA+0iFSFAUhimczAvD9lh7UOtQI0ZtN0km1Ugbc72+Tv9d2CtEg="
+
+Pro Tip: You can add it automatically by running with --add.
+
+# --add must be at the end
+$ travis encrypt SOMETHING=foobar --add 
+```
+
+### How to install "travis" (the tool) and "travis" (the environment)
+
+Simply "gem install travis" ([proof](https://travis-ci.org/monperrus/travis/builds/281669437))
+
+If a key is available, one can register a Travis session on travis.
+
+    travis login --github-token $GITHUB_AUTH_TOKEN
+
+And create a travis token
+
+    travis token --no-interactive
 ### What is the default setup of travis?
 
 ```
 Build language: ruby
-
 Build group: stable
-
 Build dist: trusty
 ```
 
