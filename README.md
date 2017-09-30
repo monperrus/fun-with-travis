@@ -1,11 +1,23 @@
 # travis
 experiments with travis
 
+### How to delete a Github branch from Travis?
+
+    curl -X DELETE -H 'Authorization: token '$GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
+    curl https://api.github.com/repos/monperrus/travis/git/refs
 
 ### How to install Github's Hub on travis?
 
-    go get github.com/github/hub
-    hub
+No solution yet
+
+```
+# does not work
+go get github.com/github/hub
+error:
+package github.com/github/hub: no buildable Go source files in /home/travis/gopath/src/github.com/github/hub
+```
+
+    
 
 ### How to add an environment variable to travis?
 

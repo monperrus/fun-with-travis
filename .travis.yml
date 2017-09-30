@@ -2,17 +2,17 @@
 install:
 - gem install travis
 - travis login --github-token $GITHUB_AUTH_TOKEN
-#- rm /home/travis/gopath/src/github.com/github/hub
-- mkdir -p /home/travis/gopath 
-- go get -d github.com/github/hub
-- find /home/travis/gopath/
-- hub
+#- go get -d github.com/github/hub
+#- find /home/travis/gopath/
+#- hub
 
 script:
 - travis token --no-interactive
 - travis accounts
 - git remote
 - cat .git/config
+- curl -X DELETE -H 'Authorization: token '$GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
+- curl https://api.github.com/repos/monperrus/travis/git/refs
 
 env:
   global:
