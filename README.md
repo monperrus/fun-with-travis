@@ -4,14 +4,14 @@ Describes experiments with using Travis.
 
 ### How to push to github directly from Travis?
 
-For a single file, one way is to call the travis API as follows (with the environment variable GITHUB_AUTH_TOKEN set):
+For a single file, one way is to call the travis API as follows (with the environment variable GITHUB_AUTH_TOKEN set). Don't push to the same branch directly or this trigger an infinite recursion of travis calls.
 
 ```yml
 script:
 - curl -O https://raw.githubusercontent.com/monperrus/misc/master/push-file-to-github.sh
 - chmod 755 push-file-to-github.sh
 - echo foo bar > foo.txt
-- ./push-file-to-github.sh foo.txt monperrus fun-with-travis pftg-branch
+- ./push-file-to-github.sh foo.txt monperrus fun-with-travis data2
 ```
 
 ### How to enrich the travis build with content from elsewhere?
