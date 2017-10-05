@@ -1,11 +1,6 @@
 
 script:
-- curl -O https://raw.githubusercontent.com/monperrus/misc/master/push-file-to-github.sh
-- chmod 755 push-file-to-github.sh
-- echo foo bar > foo.txt
-# don't push to this branch directly or this trigger an infinite travis call
-- ./push-file-to-github.sh foo.txt monperrus fun-with-travis data2
-
+- true
 
 env:
   global:

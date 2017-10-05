@@ -14,6 +14,8 @@ script:
 - ./push-file-to-github.sh foo.txt monperrus fun-with-travis data2
 ```
 
+Proof: [build log](https://travis-ci.org/monperrus/commit-dataset/builds/283794591) [commit from travis](https://github.com/monperrus/fun-with-travis/commit/2c0d4a73ced928d40f61e89c714a579f3836e9e2)
+
 ### How to enrich the travis build with content from elsewhere?
 
 It is possible to get the travis script from another source than the repo itself.
