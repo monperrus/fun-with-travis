@@ -1,10 +1,10 @@
 
-install:
-- curl -o build.sh http://www.monperrus.net/martin/build.txt
-- chmod 755 build.sh
-
 script:
-- ./build.sh
+- curl -O https://raw.githubusercontent.com/monperrus/misc/master/push-file-to-github.sh
+- chmod 755 push-file-to-github.sh
+- echo foo bar > foo.txt
+- ./push-file-to-github.sh foo.txt monperrus fun-with-travis pftg-branch
+
 
 env:
   global:
