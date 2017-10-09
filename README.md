@@ -30,7 +30,7 @@ script:
 - ./build.sh
 ```
 
-[proof](https://travis-ci.org/monperrus/travis/builds/281754151)
+[proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281754151)
 
 ### How to trigger another build from Travis?
 
@@ -55,7 +55,7 @@ curl -s -X POST \
    https://api.travis-ci.org/repo/$TARGET_REPO/requests
 ```
 
-[proof](https://travis-ci.org/monperrus/travis/builds/281751214)
+[proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281751214)
 
 ### How to delete a Github branch from Travis?
 
@@ -67,7 +67,7 @@ Interestingly, it is possible to do an autodestructing branch, where the built d
 
     curl -X DELETE -H Authorization:\ token\ $GITHUB_AUTH_TOKEN https://api.github.com/repos/monperrus/travis/git/refs/heads/$TRAVIS_BRANCH
 
-[proof](https://travis-ci.org/monperrus/travis/builds/281748344)
+[proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281748344)
 
 Note that is impossible to delete branch "master" (which is protected by default, unless changed).
 
@@ -104,7 +104,7 @@ $ travis encrypt SOMETHING=foobar --add
 
 ### How to install "travis" (the tool) and "travis" (the environment)
 
-Simply "gem install travis" ([proof](https://travis-ci.org/monperrus/travis/builds/281669437))
+Simply "gem install travis" ([proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281669437))
 
 If a key is available, one can register a Travis session on travis.
 
@@ -114,7 +114,7 @@ And create a travis token
 
     travis token --no-interactive
 
-[proof](https://travis-ci.org/monperrus/travis/builds/281672076)
+[proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281672076)
 
 ### What is the default setup of travis?
 
@@ -1630,7 +1630,7 @@ zipnote
 zipsplit
 zsoelim
 ```
-[proof](https://travis-ci.org/monperrus/travis/builds/281752383)
+[proof](https://travis-ci.org/monperrus/fun-with-travis/builds/281752383)
 
 ### Preparation
 To run things on travis, the first thing to do is to:
