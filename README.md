@@ -9,9 +9,9 @@ To answer this, set up a travis file with cache and add `cat $0` to the script [
 You'll see that:
 * Travis fetches and uploads the cache files from Google storage `https://travis-cache-production-org-gce.storage.googleapis.com` where the bucket id is the Travis repo id and Travis publick key is `GOOGZFGMULTAVLI3C63H`, eg  the cache url is `https://travis-cache-production-org-gce.storage.googleapis.com/105377138/test/cache--linux-xenial-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855--rvm-default--gemfile-Gemfile.tgz?Expires=1582393178&GoogleAccessId=GOOGZFGMULTAVLI3C63H&Signature=oSFR4uHZqTicXNT40ovlARQQuFs`
 * The URL requires the three parameters `Expires`, `GoogleAccessId` and `Signature` ([documentation](https://simplebackups.io/blog/google-cloud-storage-signed-urls-the-easy-way))
-* When a cache is needed in subsequent builds, Travis re-generates a new URL with a good signature and new time based on their secret
+* When a cache is needed in subsequent builds, Travis re-generates a new URL with a good signature and new expiration time based on their secret
 * conclusion: it is possible to access the cache from outside Travis by reading the url at `cache\ push` but not beyond the expiration date
-* optional: travis a tool called `casher` available at <https://build.travis-ci.org/files/casher>
+* optional: travis uses a tool called `casher` available at <https://build.travis-ci.org/files/casher>
 * See also <https://docs.travis-ci.com/user/caching/>
 
 ### How to push to github directly from Travis?
