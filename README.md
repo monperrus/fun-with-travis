@@ -11,7 +11,7 @@ You'll see that:
 * The URL requires the three parameters `Expires`, `GoogleAccessId` and `Signature` ([documentation](https://simplebackups.io/blog/google-cloud-storage-signed-urls-the-easy-way))
 * When a cache is needed in subsequent builds, Travis re-generates a new URL with a good signature and new expiration time based on their secret
 * conclusion: it is possible to access the cache from outside Travis by reading the url at `cache\ push` but not beyond the expiration date
-* optional: travis uses a tool called `casher` available at <https://build.travis-ci.org/files/casher>
+* travis uses a tool called `casher` available at <https://github.com/travis-ci/casher> and downloaded from <https://build.travis-ci.org/files/casher>
 * See also <https://docs.travis-ci.com/user/caching/>
 
 ### How to push to github directly from Travis?
